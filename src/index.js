@@ -11,8 +11,15 @@ ReactDOM.render(
 
 ReactDOM.render(
   <React.StrictMode>
-  <div className="text-center p-3" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)', color: 'white', bottom: '0px', position: 'absolute', alignSelf:'right'}}>
-      © Saptarshi Dey {new Date().getFullYear()}
+  <div className="text-center p-3" style={{
+    backgroundColor: '#012148',
+    color: 'white',
+    bottom: '0px',
+    position: 'fixed',
+    width: '100%'
+    // width: "fit-content",
+  }}>
+      <b>© Saptarshi Dey {new Date().getFullYear()}</b>
   </div>
 </React.StrictMode>, document.getElementById("footer")
 )
