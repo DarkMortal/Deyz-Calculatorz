@@ -285,7 +285,7 @@ function App() {
         <>
         <div style={{textAlign:"center"}}>
         <div className="btn-group">
-          <button type="button" className="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <b>Continue Calculation</b>
           </button>
           <ul className="dropdown-menu bg-dark">
@@ -306,7 +306,7 @@ function App() {
         <>
         <div style={{textAlign:"center"}}>
         <div className="btn-group">
-          <button type="button" className="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <b>Continue Calculation</b>
           </button>          
           <ul className="dropdown-menu bg-dark">

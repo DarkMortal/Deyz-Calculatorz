@@ -10,7 +10,7 @@ export class Navbar extends Component{
         return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark boxshadow">
         <a className="navbar-brand" style={{display:"inline-flex"}}><img src={brand} style={{height:"30px",width:"30px",marginRight:"5px"}}/> Deyz Calculatorz</a>
-        <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
             <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarMenu">
@@ -19,7 +19,7 @@ export class Navbar extends Component{
                     <a className="nav-link" style={headstyle} onClick={this.props.Functions.HavelHakimi}><b>Havel Hakimi Theorem</b></a>
                 </li>
                 <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" style={headstyle} id="matrix" role="button" data-toggle="dropdown"><b>Matrix Calculator</b></a>
+                    <a className="nav-link dropdown-toggle" style={headstyle} id="matrix" role="button" data-bs-toggle="dropdown"><b>Matrix Calculator</b></a>
                     <div className="dropdown-menu bg-dark" aria-labelledby="matrix">
                         <a className="dropdown-item" style={headstyle} onClick={this.props.Functions.Determinant}><b>Determinant</b></a>
                         <a className="dropdown-item" style={headstyle} onClick={this.props.Functions.Adjoint}><b>Adjoint</b></a>

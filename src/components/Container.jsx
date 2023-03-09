@@ -75,6 +75,33 @@ export default function FORM(props){
                 }})
             }
             <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" id="htbn">{props.btntxt}</button>
+            
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#profileModal" style={{marginTop: '10px'}}>Functions and Constants</button>
+            <div className="modal fade" id="profileModal" aria-labelledby="profileModalLabel" aria-hidden="true">
+                    <div className="modal-dialog">
+                    <div className="modal-content bg-dark">
+                        <div className="modal-header">
+                        <h5 className="modal-title" id="profileModalLabel">List of functions and constants that can be used</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <ul style={{color: 'white'}}>
+                                <li>pi : Evaluates to Math.PI</li>
+                                <li>sin : Evaluates to Math.sin</li>
+                                <li>cos : Evaluates to Math.cos</li>
+                                <li>tan : Evaluates to Math.tan</li>
+                                <li>sinh : Evaluates to Math.sinh</li>
+                                <li>conh : Evaluates to Math.cosh</li>
+                                <li>tanh : Evaluates to Math.tanh</li>
+                            </ul>
+                        </div>
+                        <div className="modal-footer">
+                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
           </div>
         </div>
         );

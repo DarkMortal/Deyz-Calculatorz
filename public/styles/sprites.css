@@ -1,4 +1,5 @@
 .boxshadow{
+    padding: 20px;
     box-shadow: 0px 1px 10px rgba(85, 84, 84, 0.527);
 }
 .dropdown:hover>.dropdown-menu {
@@ -56,7 +57,7 @@ input:focus + .placeholder-text .text, :not(input[value=""]) + .placeholder-text
     background-color: rgb(8, 39, 68);
     font-size: 1.0rem;
     color: orange;
-    transform: translate(0, -75%);
+    transform: translate(0, -85%);
 }
 input:focus + .placeholder-text .text{
     border-color: orange;
@@ -128,7 +129,6 @@ input:focus + .placeholder-text .text{
     overflow-y: auto;
     resize: none;
 }
-
 #sec_back{
     position: absolute;
     height: 1000%; 

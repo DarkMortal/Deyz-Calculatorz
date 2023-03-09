@@ -500,6 +500,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -541,12 +549,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: inline-flex;
 }
 
+.table {
+  display: table;
+}
+
+.contents {
+  display: contents;
+}
+
+.hidden {
+  display: none;
+}
+
 .h-32 {
   height: 8rem;
 }
 
 .w-full {
   width: 100%;
+}
+
+.border-collapse {
+  border-collapse: collapse;
 }
 
 .transform {
@@ -711,6 +735,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-100 {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .outline-none {

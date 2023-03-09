@@ -199,11 +199,10 @@ export default function FilledFields(props){
         }
     });
 
-
         const stl={
-            "margin": "auto",
-            "width": "fit-content",
-            "height": "fit-content"
+            margin: "auto",
+            width: "fit-content",
+            height: "fit-content"
         }
 
         function varReal(c){
