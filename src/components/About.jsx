@@ -10,7 +10,7 @@ export class About extends Component{
             <img src={pain} style={style1}></img><br/>
             <div style={style2}><b>Saptarshi Dey</b></div><br/><br/>
             <div style={style2}>
-                I am Saptarshi Dey, currently pursuing B.Tech in Computer Science and Engineering (CSE). Checkout my <a href='https://linktr.ee/darkmortal'>Linktree</a> 
+                I am Saptarshi Dey, currently pursuing B.Tech in Computer Science and Engineering (CSE). Checkout my <a href='https://linktr.ee/darkmortal' target='_blank'>Linktree</a> 
             </div>
             </>
         )
