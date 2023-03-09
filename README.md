@@ -40,3 +40,11 @@ The tests folder contains unit-tests written in mocha and chai. To run tests, us
 
 
         2 passing (11ms)
+
+## Deploying the project
+
+    npm run deploy
+
+## Screenshots
+![Havel Hakimi](https://user-images.githubusercontent.com/67017303/223962531-3ae89d39-ee4f-4eb8-8d98-ce17f53c38be.png)
+![Adjoint](https://user-images.githubusercontent.com/67017303/223962563-ac63f99c-337b-4f63-8e60-7cf805414ef2.png)
