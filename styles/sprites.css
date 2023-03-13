@@ -1,11 +1,18 @@
-.boxshadow{
+body {
+    height: 200vh;
+    position: relative;
+}
+
+.boxshadow {
     padding: 20px;
     box-shadow: 0px 1px 10px rgba(85, 84, 84, 0.527);
 }
+
 .dropdown:hover>.dropdown-menu {
     display: block;
 }
-.input-contain{
+
+.input-contain {
     height: fit-content;
     width: fit-content;
     position: relative;
@@ -16,14 +23,16 @@
     font-size: 1.4rem;
     padding: 0.1rem;
 }
-input{
+
+input {
     height: fit-content;
     width: 90px;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
 }
-.placeholder-text{
+
+.placeholder-text {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -35,7 +44,8 @@ input{
     align-items: center;
     pointer-events: none;
 }
-.text{
+
+.text {
     font-size: 1.2rem;
     padding: 0rem;
     margin: auto;
@@ -45,48 +55,55 @@ input{
     transform: translate(0);
     transition: transform 0.15s ease-out, font-size 0.15s ease-out, background-color 0.2s ease-out, color 0.15s ease-out;
 }
-input, .placeholder-text{
+
+input,
+.placeholder-text {
     font-size: 1.4rem;
     padding: 0 1.2rem;
 }
-input:focus{
+
+input:focus {
     outline: none;
     border-color: orange;
 }
-input:focus + .placeholder-text .text, :not(input[value=""]) + .placeholder-text .text{
+
+input:focus+.placeholder-text .text,
+:not(input[value=""])+.placeholder-text .text {
     background-color: rgb(8, 39, 68);
     font-size: 1.0rem;
     color: orange;
     transform: translate(0, -85%);
 }
-input:focus + .placeholder-text .text{
+
+input:focus+.placeholder-text .text {
     border-color: orange;
     color: orange;
 }
-.matrix_input{
+
+.matrix_input {
     position: relative;
     margin: auto;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: fit-content; 
-    height: fit-content; 
+    width: fit-content;
+    height: fit-content;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgb(8, 39, 68);
     border-radius: 10px;
     box-shadow: 0px 1px 10px rgb(85, 84, 84);
-    
+
     margin-bottom: 5px;
 }
 
-.containerM{
-    position: absolute;    
+.containerM {
+    position: absolute;
     width: fit-content;
     block-size: fit-content;
-    height: fit-content; 
+    height: fit-content;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 1px 10px rgb(85, 84, 84);
@@ -94,49 +111,55 @@ input:focus + .placeholder-text .text{
     z-index: 100;
     resize: none;
 }
-#close_btn{
-    float: right; 
-    background-color: transparent; 
-    color: white; 
-    border: none; 
+
+#close_btn {
+    float: right;
+    background-color: transparent;
+    color: white;
+    border: none;
     font-size: larger;
     border-radius: 100px;
     height: 25px;
     width: 25px;
 }
-.imaginary{
+
+.imaginary {
     background-color: rgb(165, 207, 152);
 }
-.img_text{
-    color: white; 
-    line-height:1.4;
+
+.img_text {
+    color: white;
+    line-height: 1.4;
 }
-.none{
+
+.none {
     display: none;
 }
-#abs_back{
-    position: fixed; 
-    background-color: rgba(64, 65, 66, 0.322); 
-    z-index: 90; 
-    height: 100%; 
+
+#abs_back {
+    position: fixed;
+    background-color: rgba(64, 65, 66, 0.322);
+    z-index: 90;
+    height: 100%;
     width: 100%;
-    margin: 0; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
     overflow-x: auto;
     overflow-y: auto;
     resize: none;
 }
-#sec_back{
+
+#sec_back {
     position: absolute;
-    height: 1000%; 
+    height: 1000%;
     width: 1000%;
-    margin: 0; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
     background-color: transparent;
 }
