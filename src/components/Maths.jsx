@@ -1,19 +1,19 @@
 import Latex from 'react-latex';
 
 export default function Maths(props) {
-    const styling={
-        overflow:"auto",
-        textAlign:"center",
-        height:"20vh",
+    const styling = {
+        overflow: "auto",
+        textAlign: "center",
+        height: "20vh",
     }
-    if(props.isMathMode) return (
+    if (props.isMathMode) return (
         <div style={styling}>
             <Latex>{props.equation}</Latex>
         </div>
     );
-    else return(
+    else return (
         <div style={styling}>
-            <font color="white" style={{"fontFamily":"sans-serif"}}><b>{props.noMath}</b></font>
+            <font color="white" style={{ "fontFamily": "sans-serif" }}><b>{props.noMath}</b></font>
         </div>
     )
 }

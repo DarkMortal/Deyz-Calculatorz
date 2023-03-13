@@ -11,15 +11,16 @@ ReactDOM.render(
 
 ReactDOM.render(
   <React.StrictMode>
-  <div className="text-center p-3" style={{
-    backgroundColor: '#012148',
-    color: 'white',
-    bottom: '0px',
-    position: 'fixed',
-    width: '100%'
-    // width: "fit-content",
-  }}>
+    <div className="text-center p-3" style={{
+      backgroundColor: '#012148',
+      color: 'white',
+      bottom: '0px',
+      marginTop: '20px',
+      position: 'fixed',
+      width: '100%'
+      // width: "fit-content",
+    }}>
       <b>© Saptarshi Dey {new Date().getFullYear()}</b>
-  </div>
-</React.StrictMode>, document.getElementById("footer")
-)
+    </div>
+  </React.StrictMode>, document.getElementById("footer")
+);
