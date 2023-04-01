@@ -1,15 +1,6 @@
 import React from "react";
 import MathOBJ from "../matrix.mjs";
-
-const pi = Math.PI;
-function log(x) { return Math.log10(x); }
-function ln(x) { return Math.log(x); }
-function sin(x) { return Math.sin(x); }
-function cos(x) { return Math.cos(x); }
-function tan(x) { return Math.tan(x); }
-function sinh(x) { return Math.sinh(x); }
-function cosh(x) { return Math.cosh(x); }
-function tanh(x) { return Math.tanh(x); }
+import {evaluate} from 'mathjs';
 
 export default function Fields(props) {
     React.useEffect(function () {
@@ -48,14 +39,13 @@ export default function Fields(props) {
             }
         }
 
-
         function CheckAll() {
             var input_elements = document.querySelectorAll("input.real");
             var isValidAll = true;
             input_elements.forEach(e => {
                 try {
                     if (e.value === "") throw "Empty";
-                    else eval(e.value);
+                    else evaluate(e.value);
                 } catch {
                     isValidAll = false;
                     e.style.background = "red";
@@ -67,7 +57,7 @@ export default function Fields(props) {
                 input_elements2.forEach(e => {
                     try {
                         if (e.value === "") throw "Empty";
-                        else eval(e.value);
+                        else evaluate(e.value);
                     } catch {
                         isValidAll = false;
                         e.style.background = "red";
@@ -125,8 +115,8 @@ export default function Fields(props) {
             var arr_here = [], temp = [];
             for (var i = 0; i < ((props.columns + 1) * props.rows); i += (props.columns + 1)) {
                 if (isComplex) for (var j = 0; j < props.columns; j++)
-                    temp.push(new MathOBJ.complex(parseFloat(eval(inp[i + j].childNodes[0].childNodes[0].value)), parseFloat(eval(inp[i + j].childNodes[2].childNodes[0].value))));
-                else for (j = 0; j < props.columns; j++) temp.push(parseFloat(eval(inp[i + j].childNodes[0].childNodes[0].value)));
+                    temp.push(new MathOBJ.complex(parseFloat(evaluate(inp[i + j].childNodes[0].childNodes[0].value)), parseFloat(evaluate(inp[i + j].childNodes[2].childNodes[0].value))));
+                else for (j = 0; j < props.columns; j++) temp.push(parseFloat(evaluate(inp[i + j].childNodes[0].childNodes[0].value)));
                 arr_here.push(temp); temp = [];
             }
             return arr_here;
@@ -137,8 +127,8 @@ export default function Fields(props) {
             var inp = elms[1].childNodes;
             var arr_here = [], temp = [];
             for (var i = 0; i < ((props.secondColumns + 1) * props.secondRows); i += (props.secondColumns + 1)) {
-                if (isComplex) for (var j = 0; j < props.secondColumns; j++) temp.push(new MathOBJ.complex(parseFloat(eval(inp[i + j].childNodes[0].childNodes[0].value)), parseFloat(eval(inp[i + j].childNodes[2].childNodes[0].value))));
-                else for (j = 0; j < props.secondColumns; j++) temp.push(parseFloat(eval(inp[i + j].childNodes[0].childNodes[0].value)));
+                if (isComplex) for (var j = 0; j < props.secondColumns; j++) temp.push(new MathOBJ.complex(parseFloat(evaluate(inp[i + j].childNodes[0].childNodes[0].value)), parseFloat(evaluate(inp[i + j].childNodes[2].childNodes[0].value))));
+                else for (j = 0; j < props.secondColumns; j++) temp.push(parseFloat(evaluate(inp[i + j].childNodes[0].childNodes[0].value)));
                 arr_here.push(temp); temp = [];
             }
             return arr_here;
@@ -295,7 +285,7 @@ export default function Fields(props) {
                             else props.setText(sorry_message);
                         });
                 }
-            } else alert("Please Enter some valid Values");
+            } else { alert("Please Enter some valid Values"); console.log(evaluate('pi')); }
         }
         AddListeners();
     });
