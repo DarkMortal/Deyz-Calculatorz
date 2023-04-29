@@ -1,6 +1,6 @@
 import React from "react";
 import MathOBJ from "../matrix.mjs";
-import {e, evaluate} from 'mathjs';
+import { e, evaluate } from 'mathjs';
 
 const running = "Calculating...", sorry_message = "Sorry, couldn't calculate results :(";
 
@@ -110,7 +110,7 @@ export default function FilledFields(props) {
             complexDisplayer();
         });
 
-        function GetMatrices1() { console.log(isComplex);
+        function GetMatrices1() {
             var elms = document.getElementsByClassName("matrix_input");
             var inp = elms[0].childNodes;
             var arr_here = [], temp = [];
@@ -123,7 +123,7 @@ export default function FilledFields(props) {
             return arr_here;
         }
 
-        function GetMatrices2() { console.log(isComplex);
+        function GetMatrices2() {
             var elms = document.getElementsByClassName("matrix_input");
             var inp = elms[1].childNodes;
             var arr_here = [], temp = [];
@@ -142,11 +142,11 @@ export default function FilledFields(props) {
         document.getElementById("close_btn").onclick = props.closeFunction;
         document.getElementById("calc").onclick = () => {
             if (CheckAll()) {
-                if(isComplex === props.isComplexed){
+                if (isComplex === props.isComplexed) {
                     var a = (props.tobefilled === "Left") ? (props.matrix) : (GetMatrices1()),
-                    b = (props.tobefilled === "Right") ? (props.matrix) : (GetMatrices2());
+                        b = (props.tobefilled === "Right") ? (props.matrix) : (GetMatrices2());
                 }
-                else{
+                else {
                     a = GetMatrices1();
                     b = GetMatrices2();
                 }

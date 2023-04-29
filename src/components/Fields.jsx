@@ -1,6 +1,6 @@
 import React from "react";
 import MathOBJ from "../matrix.mjs";
-import {evaluate} from 'mathjs';
+import { evaluate } from 'mathjs';
 
 const running = "Calculating...", sorry_message = "Sorry, couldn't calculate results :(";
 
@@ -286,7 +286,7 @@ export default function Fields(props) {
                             else props.setText(sorry_message);
                         });
                 }
-            } else { alert("Please Enter some valid Values");}
+            } else { alert("Please Enter some valid Values"); }
         }
         AddListeners();
     });
