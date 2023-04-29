@@ -2,10 +2,11 @@ import React from "react";
 import MathOBJ from "../matrix.mjs";
 import {evaluate} from 'mathjs';
 
+const running = "Calculating...", sorry_message = "Sorry, couldn't calculate results :(";
+
 export default function Fields(props) {
     React.useEffect(function () {
-        var isComplex = (props.isRight || props.isLeft) ? ((typeof (props.matrix[0][0]) === "number") ? (false) : (true)) : (false);
-        const running = "Calculating...", sorry_message = "Sorry, couldn't calculate results :(";
+        var isComplex = false;
         function AddListeners() {
             var input_elements = document.querySelectorAll("input.real");
             var input_elements2 = document.querySelectorAll("input.imaginary");
@@ -104,7 +105,7 @@ export default function Fields(props) {
         async function asynchronousWrapper2(f, x, y) { return await f(x, y); }
         async function asynchronousWrapper3(f, x, y, z) { return await f(x, y, z); }
 
-        document.getElementById("complex").addEventListener("click", function () {
+        document.getElementById("complex").addEventListener("change", function () {
             isComplex = !isComplex;
             complexDisplayer();
         });
@@ -285,7 +286,7 @@ export default function Fields(props) {
                             else props.setText(sorry_message);
                         });
                 }
-            } else { alert("Please Enter some valid Values"); console.log(evaluate('pi')); }
+            } else { alert("Please Enter some valid Values");}
         }
         AddListeners();
     });

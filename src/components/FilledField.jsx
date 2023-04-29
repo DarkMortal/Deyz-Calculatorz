@@ -1,11 +1,13 @@
 import React from "react";
 import MathOBJ from "../matrix.mjs";
-import {evaluate} from 'mathjs';
+import {e, evaluate} from 'mathjs';
+
+const running = "Calculating...", sorry_message = "Sorry, couldn't calculate results :(";
 
 export default function FilledFields(props) {
     React.useEffect(function () {
-        var isComplex = (props.isRight || props.isLeft) ? ((typeof (props.matrix[0][0]) === "number") ? (false) : (true)) : (false);
-        const running = "Calculating...", sorry_message = "Sorry, couldn't calculate results :(";
+        var isComplex = props.isComplexed;
+        if (isComplex) complexDisplayer();
         function AddListeners() {
             var input_elements = document.querySelectorAll("input.real");
             var input_elements2 = document.querySelectorAll("input.imaginary");
@@ -102,12 +104,13 @@ export default function FilledFields(props) {
         //TODO: To asynchronously calculate the Answer
         async function asynchronousWrapper3(f, x, y, z) { return await f(x, y, z); }
 
-        document.getElementById("complex").addEventListener("click", function () {
+        document.getElementById("complex").addEventListener("change", function (evt) {
             isComplex = !isComplex;
+            evt.target.checked = isComplex;
             complexDisplayer();
         });
 
-        function GetMatrices1() {
+        function GetMatrices1() { console.log(isComplex);
             var elms = document.getElementsByClassName("matrix_input");
             var inp = elms[0].childNodes;
             var arr_here = [], temp = [];
@@ -120,7 +123,7 @@ export default function FilledFields(props) {
             return arr_here;
         }
 
-        function GetMatrices2() {
+        function GetMatrices2() { console.log(isComplex);
             var elms = document.getElementsByClassName("matrix_input");
             var inp = elms[1].childNodes;
             var arr_here = [], temp = [];
@@ -139,9 +142,14 @@ export default function FilledFields(props) {
         document.getElementById("close_btn").onclick = props.closeFunction;
         document.getElementById("calc").onclick = () => {
             if (CheckAll()) {
-                var a = (props.tobefilled === "Left") ? (props.matrix) : (GetMatrices1()),
+                if(isComplex === props.isComplexed){
+                    var a = (props.tobefilled === "Left") ? (props.matrix) : (GetMatrices1()),
                     b = (props.tobefilled === "Right") ? (props.matrix) : (GetMatrices2());
-                console.log(a, b);
+                }
+                else{
+                    a = GetMatrices1();
+                    b = GetMatrices2();
+                }
                 if (props.calculator === "Continue Matrix Multiplication from Left" || props.calculator === "Continue Matrix Multiplication from Right") {
                     props.closeFunction(); props.mathDisabler(); props.setText(running);
                     asynchronousWrapper3(MathOBJ.Matrix_Multiplication, a, b, isComplex)
@@ -184,10 +192,6 @@ export default function FilledFields(props) {
             } else alert("Please Enter some valid Values");
         }
         AddListeners();
-        if (props.isComplexed) {
-            isComplex = true;
-            complexDisplayer();
-        }
     });
 
     const stl = {
