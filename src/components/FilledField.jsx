@@ -1,5 +1,6 @@
 import React from "react";
 import MathOBJ from "../matrix.mjs";
+import {evaluate} from 'mathjs';
 
 export default function FilledFields(props) {
     React.useEffect(function () {
@@ -44,7 +45,7 @@ export default function FilledFields(props) {
             input_elements.forEach(e => {
                 try {
                     if (e.value === "") throw "Empty";
-                    else eval(e.value);
+                    else evaluate(e.value);
                 } catch {
                     isValidAll = false;
                     e.style.background = "red";
@@ -56,7 +57,7 @@ export default function FilledFields(props) {
                 input_elements2.forEach(e => {
                     try {
                         if (e.value === "") throw "Empty";
-                        else eval(e.value);
+                        else evaluate(e.value);
                     } catch {
                         isValidAll = false;
                         e.style.background = "red";
@@ -112,8 +113,8 @@ export default function FilledFields(props) {
             var arr_here = [], temp = [];
             for (var i = 0; i < ((props.columns + 1) * props.rows); i += (props.columns + 1)) {
                 if (isComplex) for (var j = 0; j < props.columns; j++)
-                    temp.push(new MathOBJ.complex(parseFloat(eval(inp[i + j].childNodes[0].childNodes[0].value)), parseFloat(eval(inp[i + j].childNodes[2].childNodes[0].value))));
-                else for (j = 0; j < props.columns; j++) temp.push(parseFloat(eval(inp[i + j].childNodes[0].childNodes[0].value)));
+                    temp.push(new MathOBJ.complex(parseFloat(evaluate(inp[i + j].childNodes[0].childNodes[0].value)), parseFloat(evaluate(inp[i + j].childNodes[2].childNodes[0].value))));
+                else for (j = 0; j < props.columns; j++) temp.push(parseFloat(evaluate(inp[i + j].childNodes[0].childNodes[0].value)));
                 arr_here.push(temp); temp = [];
             }
             return arr_here;
@@ -124,8 +125,8 @@ export default function FilledFields(props) {
             var inp = elms[1].childNodes;
             var arr_here = [], temp = [];
             for (var i = 0; i < ((props.secondColumns + 1) * props.secondRows); i += (props.secondColumns + 1)) {
-                if (isComplex) for (var j = 0; j < props.secondColumns; j++) temp.push(new MathOBJ.complex(parseFloat(eval(inp[i + j].childNodes[0].childNodes[0].value)), parseFloat(eval(inp[i + j].childNodes[2].childNodes[0].value))));
-                else for (j = 0; j < props.secondColumns; j++) temp.push(parseFloat(eval(inp[i + j].childNodes[0].childNodes[0].value)));
+                if (isComplex) for (var j = 0; j < props.secondColumns; j++) temp.push(new MathOBJ.complex(parseFloat(evaluate(inp[i + j].childNodes[0].childNodes[0].value)), parseFloat(evaluate(inp[i + j].childNodes[2].childNodes[0].value))));
+                else for (j = 0; j < props.secondColumns; j++) temp.push(parseFloat(evaluate(inp[i + j].childNodes[0].childNodes[0].value)));
                 arr_here.push(temp); temp = [];
             }
             return arr_here;

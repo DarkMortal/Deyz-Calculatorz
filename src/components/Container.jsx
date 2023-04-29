@@ -77,9 +77,7 @@ export default function FORM(props) {
                         }
                     })
                 }
-                <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" id="htbn">{props.btntxt}</button>
-
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#profileModal" style={{ marginTop: '10px' }}>Functions and Constants</button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#profileModal" style={{ marginBottom: '20px' }}>Functions and Constants</button>
                 <div className="modal fade" id="profileModal" aria-labelledby="profileModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content bg-dark">
@@ -89,13 +87,16 @@ export default function FORM(props) {
                             </div>
                             <div className="modal-body">
                                 <ul style={{ color: 'white' }}>
-                                    <li>pi : Evaluates to Math.PI</li>
-                                    <li>sin : Evaluates to Math.sin</li>
-                                    <li>cos : Evaluates to Math.cos</li>
-                                    <li>tan : Evaluates to Math.tan</li>
-                                    <li>sinh : Evaluates to Math.sinh</li>
-                                    <li>conh : Evaluates to Math.cosh</li>
-                                    <li>tanh : Evaluates to Math.tanh</li>
+                                    <li>pi : PI constant</li>
+                                    <li>e : Euler's constant</li>
+                                    <li>log : Natural log</li>
+                                    <li>log10 : Log base 10</li>
+                                    <li>sin : Sine function</li>
+                                    <li>cos : Cosine function</li>
+                                    <li>tan : Tan function</li>
+                                    <li>sinh : Hyperbolic sine function</li>
+                                    <li>conh : Hyperbolic cosine function</li>
+                                    <li>tanh : Hyperbolic tan function</li>
                                 </ul>
                             </div>
                             <div className="modal-footer">
@@ -104,7 +105,7 @@ export default function FORM(props) {
                         </div>
                     </div>
                 </div>
-
+                <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" id="htbn">{props.btntxt}</button>
             </div>
         </div>
     );
