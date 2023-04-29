@@ -1,16 +1,6 @@
 import React from "react";
 import MathOBJ from "../matrix.mjs";
 
-const pi = Math.PI;
-function log(x) { return Math.log10(x); }
-function ln(x) { return Math.log(x); }
-function sin(x) { return Math.sin(x); }
-function cos(x) { return Math.cos(x); }
-function tan(x) { return Math.tan(x); }
-function sinh(x) { return Math.sinh(x); }
-function cosh(x) { return Math.cosh(x); }
-function tanh(x) { return Math.tanh(x); }
-
 export default function FilledFields(props) {
     React.useEffect(function () {
         var isComplex = (props.isRight || props.isLeft) ? ((typeof (props.matrix[0][0]) === "number") ? (false) : (true)) : (false);

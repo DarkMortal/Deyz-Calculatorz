@@ -169,12 +169,12 @@ function MatMul(A, B, isComplex) {
     for (var k = 0; k < B[0].length; k++) {
         for (var i = 0; i < A.length; i++) {
             for (var j = 0; j < A[0].length; j++) {
+                console.info(typeof A[i][j]);
                 if (isComplex) sum = sum.ADD(A[i][j].Multiply(B[j][k]));
                 else sum += A[i][j] * B[j][k];
             }
             temp.push(sum);
-            if (isComplex) sum = new Complex(0, 0);
-            else sum = 0;
+            sum = (isComplex) ? (new Complex(0, 0)) : (0);
         } C.push(temp); temp = [];
     }
     return Transpose(C);

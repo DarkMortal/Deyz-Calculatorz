@@ -10,7 +10,7 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <div className="text-center p-3" style={{
       backgroundColor: '#012148',
       color: 'white',
@@ -22,5 +22,5 @@ ReactDOM.render(
     }}>
       <b>© Saptarshi Dey {new Date().getFullYear()}</b>
     </div>
-  </React.StrictMode>, document.getElementById("footer")
+  </React.Fragment>, document.getElementById("footer")
 );
