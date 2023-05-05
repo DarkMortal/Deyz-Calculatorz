@@ -4,7 +4,7 @@ export default function Maths(props) {
     const styling = {
         overflow: "auto",
         textAlign: "center",
-        height: "20vh",
+        height: "35vh",
     }
     if (props.isMathMode) return (
         <div style={styling}>

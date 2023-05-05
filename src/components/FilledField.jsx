@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import MathOBJ from "../matrix.mjs";
-import { e, evaluate } from 'mathjs';
+import { evaluate } from 'mathjs';
 
 const running = "Calculating...", sorry_message = "Sorry, couldn't calculate results :(";
 
@@ -483,4 +484,9 @@ export default function FilledFields(props) {
                 </div>
             </div></div>
     );
+}
+
+FilledFields.propTypes = {
+    matrix: PropTypes.array.isRequired,
+    tobefilled: PropTypes.string.isRequired
 }

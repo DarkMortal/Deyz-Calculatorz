@@ -7,6 +7,7 @@ import MathOBJ from './matrix.mjs';
 import FilledFields from './components/FilledField';
 import { About } from './components/About'
 import { useState } from 'react';
+import Bases from './components/Bases';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
   const [isFilledMatrix, changeFilled] = useState("None");
   const [btntxt, SetBtn] = useState("Set Matrix");
   const [answer, ChangeAnswer] = useState("");
-  const [which_calculator, ChangeCalc] = useState("Havel Hakimi Theorem");
+  const [which_calculator, ChangeCalc] = useState("Change of Bases");
   const [decimals, ChangeDecimals] = useState(2);
   const [mathMode, changeMode] = useState(false);
   const [tempMatrix, changeTempMatrix] = useState(null);
@@ -195,7 +196,10 @@ function App() {
       SetBtn("Set Matrices"); ChangeCalc("Matrix Subtraction"); ChangeAnswer(""); Change_nonMathModeText(""); changeTempMatrix(null);
     },
     HavelHakimi: function () {
-      ChangeCalc("Havel Hakimi Theorem"); ChangeAnswer(""); Change_nonMathModeText(""); changeTempMatrix(null);
+      ChangeCalc("Havel Hakimi Theorem"); ChangeAnswer(""); Change_nonMathModeText(""); changeTempMatrix(null); // changeMode(false);
+    },
+    ChangeOfBases: function () {
+      ChangeCalc("Change of Bases"); ChangeAnswer(""); Change_nonMathModeText(""); changeTempMatrix(null); // changeMode(true);
     },
     InverseM: function () {
       SetData([{ Text: "Enter number of variables:", Num: 10, selectedIndex: 0, isDisabled: false }, { Text: "Trailing Decimals:", Num: 10, selectedIndex: decimals - 1, isDisabled: false }]);
@@ -236,7 +240,8 @@ function App() {
   const SUBR = continueFunctions.subtractRight;
 
   function GetCalculator() {
-    if (which_calculator === "Havel Hakimi Theorem") return <Havel></Havel>;
+    if (which_calculator === "Havel Hakimi Theorem") return <Havel/>;
+    else if (which_calculator === "Change of Bases") return <Bases/>
     else if (which_calculator.includes("Matrix")) return (
       <FORM
         data={data}
@@ -276,7 +281,7 @@ function App() {
         onClickHandler2={(n) => { powChanger(n); }}>
       </FORM>
     )
-    else if (which_calculator === "About Myself") return <About></About>
+    else if (which_calculator === "About Myself") return <About/>
   }
 
   function Continue() {
@@ -323,7 +328,9 @@ function App() {
   }
 
   function GetMath() {
-    if (which_calculator.includes("Matrix")) return <Maths equation={answer} isMathMode={mathMode} noMath={nonMathModeText}></Maths>
+    if (which_calculator.includes("Matrix"))
+      return <Maths equation={answer} isMathMode={mathMode} noMath={nonMathModeText}/>
+    else return null;
   }
 
   function ParseMatrix1(x, isComplex) {
@@ -350,19 +357,19 @@ function App() {
     if (isContainerShow) return <Field
       rows={dimensionManager.row}
       columns={dimensionManager.column}
-      closeFunction={() => { setContainer(false); }}
+      closeFunction={() => setContainer(false)}
       isSecondNeeded={isContainerShow2}
       secondRows={dimensionManager2.row}
       secondColumns={dimensionManager2.column}
-      setAnswer={(str) => { ChangeAnswer(str); }}
+      setAnswer={(str) => ChangeAnswer(str)}
       calculator={which_calculator}
-      mathEnabler={() => { changeMode(true); }}
-      mathDisabler={() => { changeMode(false); }}
-      setText={(strx) => { Change_nonMathModeText(strx); }}
+      mathEnabler={() => changeMode(true)}
+      mathDisabler={() => changeMode(false)}
+      setText={(strx) => Change_nonMathModeText(strx)}
       matrixParser1={ParseMatrix1}
       matrixParser2={ParseMatrix2}
-      closeFunction2={() => { setContainer2(false); }}
-      Pow={pow} changeMatrix={(x) => { changeTempMatrix(x); }}
+      closeFunction2={() => setContainer2(false)}
+      Pow={pow} changeMatrix={(x) => changeTempMatrix(x)}
       trailingDecimals={decimals}>
     </Field>
   }
@@ -374,17 +381,17 @@ function App() {
       tobefilled={isFilledMatrix}
       matrix={tempMatrix}
       isComplexed={(typeof (tempMatrix[0][0]) === "object")}
-      closeFunction={() => { changeFilled("None"); }}
+      closeFunction={() => changeFilled("None")}
       secondRows={dimensionManager2.row}
       secondColumns={dimensionManager2.column}
-      setAnswer={(str) => { ChangeAnswer(str); }}
+      setAnswer={(str) => ChangeAnswer(str)}
       calculator={which_calculator}
-      mathEnabler={() => { changeMode(true); }}
-      mathDisabler={() => { changeMode(false); }}
-      setText={(strx) => { Change_nonMathModeText(strx); }}
+      mathEnabler={() => changeMode(true)}
+      mathDisabler={() => changeMode(false)}
+      setText={(strx) => Change_nonMathModeText(strx)}
       matrixParser1={ParseMatrix1}
       matrixParser2={ParseMatrix2}
-      changeMatrix={(x) => { changeTempMatrix(x); }}
+      changeMatrix={(x) => changeTempMatrix(x)}
       trailingDecimals={decimals}>
     </FilledFields>
   }

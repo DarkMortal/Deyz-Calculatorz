@@ -32,14 +32,23 @@ The tests folder contains unit-tests written in mocha and chai. To run tests, us
     > calculatorz@1.2.3 test
     > npx mocha src/tests.mjs
 
-        Determinant
-            ✔ should return -168
+    Determinant
+        ✔ should return -168
 
-        Complex Determinant
-            ✔ should return -393+225i
+    Complex Determinant
+        ✔ should return -393+225i
+
+    Binary to Octal
+        ✔ should return 53.46
+
+    Octal to Hexadecimal
+        ✔ should return 91.FD
+
+    Base_18 to Base_25
+        ✔ should return 5G8BLME.0
 
 
-        2 passing (11ms)
+    5 passing (18ms)
 
 ## Deploying the project
 

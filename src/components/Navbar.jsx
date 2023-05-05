@@ -8,13 +8,16 @@ export class Navbar extends Component {
             "textAlign": "center"
         }
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark boxshadow">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark boxshadow" /*style={{position: 'fixed', width: '100vw', zIndex: '100', top: '0px'}}*/>
                 <a className="navbar-brand" style={{ display: "inline-flex" }}><img src={brand} style={{ height: "30px", width: "30px", marginRight: "5px" }} /> Deyz Calculatorz</a>
                 <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarMenu">
                     <ul className="navbar-nav ml-auto">
+                        <li className="nav-item">
+                            <a className="nav-link" style={headstyle} onClick={this.props.Functions.ChangeOfBases}><b>Change of Bases</b></a>
+                        </li>
                         <li className="nav-item">
                             <a className="nav-link" style={headstyle} onClick={this.props.Functions.HavelHakimi}><b>Havel Hakimi Theorem</b></a>
                         </li>

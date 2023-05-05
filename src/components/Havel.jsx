@@ -58,7 +58,7 @@ export default function Havel() {
         }
     }, []);
     return (
-        <>
+        <React.Fragment>
             <form className="form-inline" id="hvl_btn" style={{ textAlign: "center" }}>
                 <div style={style}>
                     <div>
@@ -77,6 +77,6 @@ export default function Havel() {
                 <iframe style={{ margin: "auto" }} width="560" height="315" src="https://www.youtube.com/embed/DdCxNvULI-c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 The Havel-Hakimi algorithm is an algorithm in graph theory solving the graph realization problem. That is, it answers the following question: Given a finite list of nonnegative integers in non-increasing order, is there a simple graph such that its degree sequence is exactly this list?
             </div></details>
-        </>
+        </React.Fragment>
     );
 }

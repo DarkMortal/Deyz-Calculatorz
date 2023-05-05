@@ -77,7 +77,7 @@ export default function FORM(props) {
                         }
                     })
                 }
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#profileModal" style={{ marginBottom: '20px' }}>Functions and Constants</button>
+                <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#profileModal" style={{ marginBottom: '20px' }}>Functions and Constants</button>
                 <div className="modal fade" id="profileModal" aria-labelledby="profileModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content bg-dark">
