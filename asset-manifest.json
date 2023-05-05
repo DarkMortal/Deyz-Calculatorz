@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Deyz-Calculatorz/static/js/main.2b0677b3.js",
+    "main.js": "/Deyz-Calculatorz/static/js/main.5dbdb05f.js",
     "static/media/Face.png": "/Deyz-Calculatorz/static/media/Face.17fd2f769da65753c1f7.png",
     "static/media/brand.png": "/Deyz-Calculatorz/static/media/brand.4317b906dd91e3d041d0.png",
     "index.html": "/Deyz-Calculatorz/index.html",
-    "main.2b0677b3.js.map": "/Deyz-Calculatorz/static/js/main.2b0677b3.js.map"
+    "main.5dbdb05f.js.map": "/Deyz-Calculatorz/static/js/main.5dbdb05f.js.map"
   },
   "entrypoints": [
-    "static/js/main.2b0677b3.js"
+    "static/js/main.5dbdb05f.js"
   ]
 }
