@@ -18,8 +18,10 @@ export default function Bases() {
             Array.from(Array(32), (err, i) => {
               if (err) console.error("Error : ", err);
               else {
-                if (i === 10) return <option key={i + 1} value={i + 1} selected>{i + 1}</option>
-                else return <option key={i + 1} value={i + 1}>{i + 1}</option>
+                if (i > 0) {
+                  if (i === 10) return <option key={i + 1} value={i + 1} selected>{i + 1}</option>
+                  else return <option key={i + 1} value={i + 1}>{i + 1}</option>
+                } else return null;
               }
             })
           }
@@ -30,8 +32,10 @@ export default function Bases() {
             Array.from(Array(32), (err, i) => {
               if (err) console.error("Error : ", err);
               else {
-                if (i === 10) return <option key={i + 1} value={i + 1} selected>{i + 1}</option>
-                else return <option key={i + 1} value={i + 1}>{i + 1}</option>
+                if (i > 0) {
+                  if (i === 10) return <option key={i + 1} value={i + 1} selected>{i + 1}</option>
+                  else return <option key={i + 1} value={i + 1}>{i + 1}</option>
+                } else return null;
               }
             })
           }
@@ -50,14 +54,17 @@ export default function Bases() {
         </select>
         <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={() => {
           let text = document.querySelector('input').value.toUpperCase();
-          let inputBase = document.getElementById('inputBase').selectedIndex + 1;
-          let outputBase = document.getElementById('outputBase').selectedIndex + 1;
+          let inputBase = document.getElementById('inputBase').selectedIndex + 2;
+          let outputBase = document.getElementById('outputBase').selectedIndex + 2;
           let decimal = document.getElementById('decimal').selectedIndex + 1;
-          if(base_obj.isValidNum(text, inputBase)){
-            let ans = base_obj.convertToBase(text, inputBase, outputBase, decimal);
-            ChangeAnswer(`$(${text})_{${inputBase}} = (${ans})_{${outputBase}}$`);
+          if(text === ''){
+            alert('Please enter a valid number');
+            ChangeAnswer('');
           }else{
-            alert(`${text} is not a valid base ${inputBase} number`);
+            if (base_obj.isValidNum(text, inputBase)) {
+              let ans = base_obj.convertToBase(text, inputBase, outputBase, decimal);
+              ChangeAnswer(`$(${text})_{${inputBase}} = (${ans})_{${outputBase}}$`);
+            } else alert(`${text} is not a valid base ${inputBase} number`);
           }
         }}>Calculate</button>
       </div>
