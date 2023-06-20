@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import face from "./Face.jpeg"
+import face from "./Face.jpg"
 
 export class About extends Component {
     render() {
