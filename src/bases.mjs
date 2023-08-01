@@ -25,22 +25,23 @@ const isValidNum = (str, radix) => {
 const convertToDecimal = (str, radix) => {
     var sum1 = 0, sum2 = 0;
     let parts = str.split('.');
-    for(let i=0;i<parts[0].length;i++){
-        let power = Math.pow(radix, parts[0].length-i-1);
+    let power1 = Math.pow(radix, parts[0].length-1), power2 = 1/radix;
+    for(let i=0;i<parts[0].length;i++,power1 /= radix){
+        //let power = Math.pow(radix, parts[0].length-i-1);
         let num = parseInt(parts[0].charAt(i));
         if(isNaN(num)) num = numFromChar(str.charAt(i));
-        sum1 += num*power;
+        sum1 += num*power1;
     }
-    if(parts[1]) for(let i=0;i<parts[1].length;i++){
-        let power = Math.pow(radix, -i-1);
+    if(parts[1]) for(let i=0;i<parts[1].length;i++,power2 /= radix){
+        //let power = Math.pow(radix, -i-1);
         let num = parseInt(parts[1].charAt(i));
         if(isNaN(num)) num = numFromChar(parts[1].charAt(i));
-        sum2 += num*power;
+        sum2 += num*power2;
     }   return sum1+sum2;
 }
 
 const convertToBase = (str, baseRadix, convertRadix, decimals) => {
-    let baseStr = (baseRadix == 10)?str:convertToDecimal(str,baseRadix).toString();
+    let baseStr = (baseRadix === 10)?str:convertToDecimal(str,baseRadix).toString();
     let parts = baseStr.split('.');
     let num = parseInt(parts[0]);
     let dec = parseFloat(`0.${parts[1]}`);
